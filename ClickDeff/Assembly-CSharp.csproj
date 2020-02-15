@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ForClicker\changeBookmarks.cs" />
+    <Compile Include="Assets\Scripts\ForClicker\info.cs" />
     <Compile Include="Assets\Scripts\ForClicker\timerBeforeBattle.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nikit/Anne/ClickDeff/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
