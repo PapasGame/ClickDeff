@@ -19,10 +19,11 @@ public class timerBeforeBattle : MonoBehaviour
 
     public Text TextTime;
 
-    void Update()
-    {       
+    private bool checkOfEnd = false;
 
-        do
+    void Update()
+    {
+        if (!checkOfEnd)
         {
             seconds -= Time.deltaTime;
 
@@ -40,6 +41,11 @@ public class timerBeforeBattle : MonoBehaviour
                 transform.localScale = Vector3.Lerp(transform.localScale, newscale, Time.deltaTime + 0.01f);
 
                 TextTime.color = Color.red; //change color of time
+
+                if (seconds < 0)
+                {
+                    checkOfEnd = true;
+                }
             }
 
             if (seconds < 10)
@@ -48,13 +54,11 @@ public class timerBeforeBattle : MonoBehaviour
             }
             else TextTime.text = minutes + ":" + (int)seconds;
 
-            if (seconds <= 0)
+            if (seconds <= 0 && minutes > 0)
             {
                 minutes -= 1.0f;
                 seconds = 60.0f;
             }
-
-        } while ((int)seconds != 0 && (int)minutes != 0);
-        
+        }
     }
 }
