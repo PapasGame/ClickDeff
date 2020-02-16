@@ -6,6 +6,8 @@ public class info : MonoBehaviour
 {
     public static string nameOfBookmarks { get; set; }
     public static Sprite previoslyImg { get; set; }
+    public static GameObject previoslyWindow { get; set; }
+
     public Sprite first;
 
     private void Start()
@@ -13,5 +15,8 @@ public class info : MonoBehaviour
         nameOfBookmarks = "game";
         previoslyImg = GameObject.Find("game").GetComponent<SpriteRenderer>().sprite;
         GameObject.Find("game").GetComponent<SpriteRenderer>().sprite = first;
+
+        previoslyWindow = GameObject.Find("gameMenu");
+        GameObject.Find("gameMenu").SetActive(true);
     }
 }

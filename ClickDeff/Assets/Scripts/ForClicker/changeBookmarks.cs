@@ -5,14 +5,11 @@ using UnityEngine;
 public class changeBookmarks : MonoBehaviour
 {
     //public GameObject targetWindow;
-    public Sprite disableImg, activeImg;
+    public Sprite activeImg;
+    public GameObject activeWindow;
 
     private void OnMouseDown()
     {
-        /*transform.parent.parent.gameObject.SetActive(false);
-        targetWindow.SetActive(true);
-        gameObject.SetActive(true);*/
-
         //change bookmarks
         GameObject.Find(info.nameOfBookmarks).GetComponent<SpriteRenderer>().sprite = info.previoslyImg;
         info.previoslyImg = GetComponent<SpriteRenderer>().sprite;
@@ -20,6 +17,9 @@ public class changeBookmarks : MonoBehaviour
         info.nameOfBookmarks = name;
 
         //change menu
+        info.previoslyWindow.SetActive(false);
+        activeWindow.SetActive(true);
+        info.previoslyWindow = activeWindow;
 
 
         Debug.Log(gameObject.name + " " + info.nameOfBookmarks);
