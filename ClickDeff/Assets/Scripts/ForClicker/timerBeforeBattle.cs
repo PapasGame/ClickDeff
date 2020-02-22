@@ -40,7 +40,7 @@ public class timerBeforeBattle : MonoBehaviour
                 else newscale = new Vector3(x2, y2, 0.0f);
                 transform.localScale = Vector3.Lerp(transform.localScale, newscale, Time.deltaTime + 0.01f);
 
-                TextTime.color = Color.red; //change color of time
+                TextTime.color = new Color(1.0f, 0.0f, 0.0f); //change color of time
 
                 if (seconds < 0)
                 {

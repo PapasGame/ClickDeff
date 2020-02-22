@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class info : MonoBehaviour 
 {
@@ -10,13 +11,15 @@ public class info : MonoBehaviour
 
     public Sprite first;
 
+    public GameObject firstWindow;
+
     private void Start()
     {
-        nameOfBookmarks = "game";
-        previoslyImg = GameObject.Find("game").GetComponent<SpriteRenderer>().sprite;
-        GameObject.Find("game").GetComponent<SpriteRenderer>().sprite = first;
+        nameOfBookmarks = "weapon";
+        previoslyImg = GameObject.Find("weapon").GetComponent<Image>().sprite;
+        GameObject.Find("weapon").GetComponent<Image>().sprite = first;
+        firstWindow.SetActive(true);
 
-        previoslyWindow = GameObject.Find("gameMenu");
-        GameObject.Find("gameMenu").SetActive(true);
+        previoslyWindow = firstWindow;
     }
 }
